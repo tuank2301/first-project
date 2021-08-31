@@ -1,0 +1,64 @@
+.birthday {
+  background: $clr-pink;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__container {
+    width: 90vw;
+    max-width: 450px;
+    background: $clr-white;
+    margin: 5rem 0;
+    border-radius: $radius;
+    padding: 1.5rem 2rem;
+
+    h3 {
+      font-weight: normal;
+      text-transform: none;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &--person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: $light-shadow;
+    }
+
+    h4 {
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn--clear {
+    width: 100%;
+    display: block;
+    color: $clr-white;
+    background: $clr-pink;
+    border-color: transparent;
+    margin: 2rem auto 0 auto;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    letter-spacing: $spacing;
+    border-radius: $radius;
+    cursor: pointer;
+  }
+}

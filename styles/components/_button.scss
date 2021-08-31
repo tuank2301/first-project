@@ -1,0 +1,37 @@
+.btn {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }
+  &--login {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 80%;
+    margin-top: 3.5rem;
+    border-radius: 50px;
+    background: linear-gradient(150deg, #00dbde, #fc00ff);
+    color: $clr-white;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    &:hover {
+      animation: rotate 1.5s linear infinite;
+      box-shadow: 2px 2px inset linear-gradient(150deg, #00dbde, #fc00ff);
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

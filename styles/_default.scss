@@ -1,0 +1,260 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: $spacing;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  margin-top: -5rem;
+  justify-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    top: 0;
+    left: 0;
+    background: url(../images/hero.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @include media-md {
+      background-size: contain;
+      height: 100%;
+    }
+  }
+}
+
+.form__container {
+  position: relative;
+  overflow: hidden;
+  height: 70px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    outline: 0;
+    border: 0;
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 10px;
+  }
+
+  label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #000;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: -1px;
+      left: 0;
+      border-bottom: 3px solid #5fa8d3;
+      transform: translateX(-100%);
+      transition: $transition-ease;
+      overflow: hidden;
+    }
+  }
+
+  input:focus + .form__label .form__span-name,
+  input:valid + .form__label .form__span-name {
+    transform: translateY(-150%);
+    transition: all 0.3s ease;
+    color: $clr-blue;
+  }
+
+  input:focus + .form__label::after,
+  input:valid + .form__label::after {
+    transform: translateX(0);
+    transition: $transition-ease;
+  }
+}
+
+.form__span-name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  transition: all 0.3s ease;
+}
+
+.icons {
+  &__container {
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    margin: 1.5rem;
+  }
+
+  &__border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #0a80ec;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      width: 60px;
+      height: 60px;
+      transition: $transition;
+    }
+  }
+
+  &__circle {
+    color: $clr-white;
+    font-size: 1.5rem;
+  }
+
+  &--cancel {
+    color: $clr-red;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 1.5rem;
+  }
+}
+
+.loading--page {
+  display: block;
+  width: 100vw;
+  font-size: 2rem;
+  color: $clr-red;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.title {
+  margin-bottom: 4rem;
+  text-align: center;
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .underline {
+    width: 6rem;
+    height: 0.25rem;
+    background: $clr-blue;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.btn {
+  background: $clr-blue-10;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: $radius;
+  text-transform: capitalize;
+  color: $clr-red;
+  letter-spacing: $spacing;
+  border-color: transparent;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+
+  &--delete {
+    display: block;
+    width: 200px;
+    margin: 1rem auto 0 auto;
+    color: red;
+    text-transform: capitalize;
+    letter-spacing: $spacing;
+    background: transparent;
+    border: 1px solid $clr-red;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border-radius: $radius;
+    font-weight: 600;
+  }
+}
+
+.section {
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}

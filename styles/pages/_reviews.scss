@@ -1,0 +1,115 @@
+.reviews {
+  display: grid;
+  place-items: center;
+  background: $clr-blue-10;
+  min-height: 110vh;
+  margin-top: -6rem;
+
+  &__container {
+    width: 80%;
+    max-width: 620px;
+  }
+
+  &--person {
+    background: $clr-white;
+    padding: 1.5rem 2rem;
+    border-radius: $radius;
+    box-shadow: $light-shadow;
+    transition: $transition;
+    text-align: center;
+
+    &:hover {
+      box-shadow: $dark-shadow;
+    }
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: $clr-blue-5;
+      position: absolute;
+      top: -0.25rem;
+      right: -0.5rem;
+      border-radius: 50%;
+    }
+
+    &--person {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+
+  &--author {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  &--job {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: $clr-blue-5;
+    font-size: 0.85rem;
+  }
+
+  &--info {
+    margin-bottom: 0.75rem;
+  }
+
+  &__icons-quote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transform: translateY(25%);
+    background: $clr-blue-5;
+    color: $clr-white;
+  }
+
+  .prev-btn,
+  .next-btn {
+    color: $clr-blue-7;
+    font-size: 1.25rem;
+    background: transparent;
+    border-color: transparent;
+    margin: 0 0.5rem;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      color: $clr-blue-5;
+    }
+  }
+
+  .random-btn {
+    margin-top: 0.5rem;
+    background: $clr-blue-10;
+    color: $clr-blue-5;
+    padding: 0.25rem 0.5rem;
+    text-transform: capitalize;
+    border-radius: $radius;
+    transition: $transition;
+    border-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      background: $clr-blue-5;
+      color: $clr-blue-1;
+    }
+  }
+}

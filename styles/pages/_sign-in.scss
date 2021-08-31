@@ -1,0 +1,149 @@
+.sign-in {
+  background-image: url(../images/bg-01.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    height: 90%;
+    width: 500px;
+    background: $clr-white;
+    border-radius: 1rem;
+    display: block;
+    position: relative;
+
+    h3 {
+      font-weight: bold;
+      font-size: 3rem;
+      padding: 3rem;
+      width: 100%;
+      text-align: center;
+      display: block;
+      height: 20%;
+    }
+  }
+  &__form {
+    display: block;
+    width: 400px;
+    margin: auto;
+    position: relative;
+  }
+
+  &__icons {
+    height: 20px;
+    width: 20px;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sign-up {
+    &__container {
+      display: block;
+      grid-template-rows: 1fr 1fr 2fr;
+      height: 35%;
+      text-align: center;
+    }
+
+    &__center {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__btn--forgot-password {
+      font-size: 1rem;
+      position: absolute;
+      right: 0;
+      padding: 1rem;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    &--account {
+      font-size: 1.5rem;
+      color: $clr-blue;
+      margin: 0 auto;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2), 0 0 5px #6d6de7;
+        font-size: 1.8rem;
+        transition: $transition;
+      }
+    }
+  }
+}
+
+.form__container {
+  position: relative;
+  overflow: hidden;
+  height: 70px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    outline: 0;
+    border: 0;
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 10px;
+  }
+
+  label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #000;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: -1px;
+      left: 0;
+      border-bottom: 3px solid #5fa8d3;
+      transform: translateX(-100%);
+      transition: $transition-ease;
+      overflow: hidden;
+    }
+  }
+
+  input:focus + .form__label .form__span-name,
+  input:valid + .form__label .form__span-name {
+    transform: translateY(-150%);
+    transition: all 0.3s ease;
+    color: $clr-blue;
+  }
+
+  input:focus + .form__label::after,
+  input:valid + .form__label::after {
+    transform: translateX(0);
+    transition: $transition-ease;
+  }
+}
+
+.form__span-name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  transition: $transition-ease;
+}
+
+#gh {
+  background: $clr-black;
+}
+#gg {
+  background: $clr-grey;
+}
